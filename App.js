@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput, TouchableHighlight} from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image} from 'react-native';
 
 export default function App() {
   return (
@@ -18,15 +18,39 @@ export default function App() {
 
 
       <View style={styles.button}>
-        <TouchableHighlight
+        <TouchableOpacity
         style={styles.touch}
         activeOpacity={0.6}
         >
+
               <Text style={styles.buttonText}>
                 Log in
               </Text>
-        </TouchableHighlight>
+        </TouchableOpacity>
       </View>
+
+      <View style={styles.choice}>
+        <View style={styles.continue}></View>
+        <Text style={styles.continueText}>   Or continue with  </Text>
+        <View style={styles.continue}></View>
+      </View>
+
+      <View style={styles.apps}>
+        <Image source={require('./assets/apple.jpg')} style={styles.icon}/>
+        <Image source={require('./assets/google.png')} style={styles.icon}/>
+        <Image source={require('./assets/facebook.jpg')} style={styles.icon}/>
+        
+      </View>
+
+
+      <View style={styles.newACcount}>
+        <Text style={styles.noAccount}>
+          Haven't an account? 
+        </Text>
+        <Text style={styles.register}>  Register</Text>
+      </View>
+
+
       
     </View>
   );
@@ -62,7 +86,7 @@ const styles = StyleSheet.create({
   },
 
   userInput: {
-    width:'80%',
+    width:'90%',
     padding: 10,
     borderRadius:15,
     borderColor: 'black',
@@ -71,7 +95,7 @@ const styles = StyleSheet.create({
   },
 
   button:{
-    width: '80%',
+    width: '90%',
     marginTop: 10,
     
   },
@@ -85,5 +109,58 @@ const styles = StyleSheet.create({
     color: 'white',
     marginLeft: "40%",
     fontSize:16
+  },
+
+
+  choice: {
+    marginTop: 70,
+    height: 20,
+    display: 'flex',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    width: '90%',
+    marginBottom: 30
+  },
+
+  continue: {
+      height: 1,
+      width: '35%',
+      backgroundColor: '#D3D3D3',
+      marginTop: 10
+  },
+
+  continueText: {
+    fontWeight: '100',
+    alignItems: 'center',
+    
+  },
+
+ apps: {
+  display: 'flex',
+  width: '70%',
+  flexDirection:'row',
+  justifyContent:'space-evenly',
+  marginLeft: 30,
+  marginTop: 20
+ },
+
+  icon: {
+    width: 50, 
+    height: 50, 
+    marginHorizontal: 10, 
+  },
+  newACcount:{
+     display: 'flex',
+     flexDirection:'row',
+     marginTop: 60,
+    justifyContent: 'center'
+  },
+
+  noAccount: {
+    fontWeight: '100'
+  },
+
+  register: {
+    color:'#87CEEB'
   }
 });
