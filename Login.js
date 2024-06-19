@@ -10,60 +10,66 @@ export default function Login({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <StatusBar style="auto" />
+        <View style={styles.container}>
+        <StatusBar style="auto" />
 
-      <Text style={styles.username}>Jobfind</Text>
-      <Text style={styles.welcomeM}>Welcome back 👋</Text>
-      <Text style={styles.welcome2}>Let's log in, apply to jobs</Text>
+        <Text style={styles.companyname}>Jobfind</Text>
+        <Text style={styles.welcomeM}>Welcome back 👋</Text>
+        <Text style={styles.welcome2}>Let's log in, apply to jobs</Text>
 
-      <View style={styles.inputs}>
-          <TextInput style={styles.userInput} placeholder='Name'/>
-          <TextInput style={styles.userInput} placeholder='email'/>
+        <View style={styles.inputs}>
+            <TextInput style={styles.userInput} placeholder='Name'/>
+            <TextInput style={styles.userInput} placeholder='email'/>
+          
+        </View>
+
+
+        <View style={styles.button}>
+          <TouchableOpacity
+          style={styles.touch}
+          activeOpacity={0.6}
+          onPress={handleLogin}
+          >
+
+                <Text style={styles.buttonText}>
+                  Log in
+                </Text>
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.choice}>
+          <View style={styles.continue}></View>
+          <Text style={styles.continueText}>   Or continue with  </Text>
+          <View style={styles.continue}></View>
+        </View>
+
+        <View style={styles.apps}>
+          <Image source={require('./assets/apple.jpg')} style={styles.icon}/>
+          <Image source={require('./assets/google.png')} style={styles.icon}/>
+          <Image source={require('./assets/facebook.jpg')} style={styles.icon}/>
+          
+        </View>
+
+
+        <View style={styles.newACcount}>
+          <Text style={styles.noAccount}>
+            Haven't an account? 
+          </Text>
+          <Text style={styles.register}>  Register</Text>
+        </View>
         
       </View>
-
-
-      <View style={styles.button}>
-        <TouchableOpacity
-        style={styles.touch}
-        activeOpacity={0.6}
-        onPress={handleLogin}
-        >
-
-              <Text style={styles.buttonText}>
-                Log in
-              </Text>
-        </TouchableOpacity>
-      </View>
-
-      <View style={styles.choice}>
-        <View style={styles.continue}></View>
-        <Text style={styles.continueText}>   Or continue with  </Text>
-        <View style={styles.continue}></View>
-      </View>
-
-      <View style={styles.apps}>
-        <Image source={require('./assets/apple.jpg')} style={styles.icon}/>
-        <Image source={require('./assets/google.png')} style={styles.icon}/>
-        <Image source={require('./assets/facebook.jpg')} style={styles.icon}/>
-        
-      </View>
-
-
-      <View style={styles.newACcount}>
-        <Text style={styles.noAccount}>
-          Haven't an account? 
-        </Text>
-        <Text style={styles.register}>  Register</Text>
-      </View>
-
-
-      
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  container1: {
+    flex: 1,
+    backgroundColor: 'blue'
+  },
+
+
   container: {
     flex: 1,
     backgroundColor: '#fff',
@@ -71,7 +77,7 @@ const styles = StyleSheet.create({
     marginLeft:20,
   },
 
-  username:{
+  companyname:{
     fontWeight: 'bold',
     color:'#87CEEB',
     marginBottom: 10,
