@@ -1,12 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image} from 'react-native';
 
-export default function Login() {
+export default function Login({ navigation }) {
+
+
+  const handleLogin = () => {
+    navigation.navigate('Home');
+  };
+
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
 
-      <Text style={styles.username}>JEDIDIAH AGBEDAM</Text>
+      <Text style={styles.username}>Jobfind</Text>
       <Text style={styles.welcomeM}>Welcome back 👋</Text>
       <Text style={styles.welcome2}>Let's log in, apply to jobs</Text>
 
@@ -21,6 +27,7 @@ export default function Login() {
         <TouchableOpacity
         style={styles.touch}
         activeOpacity={0.6}
+        onPress={handleLogin}
         >
 
               <Text style={styles.buttonText}>
